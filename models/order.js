@@ -3,6 +3,7 @@ const { Schema } = mongoose
 
 const productSchema = new Schema({
     productType: { type: String },
+    status: {type: String},
     quantity: { type: Number, default: 0 },
     washing: { type: Boolean, default: false },
     ironing: { type: Boolean, default: false },
