@@ -12,8 +12,6 @@ var cors = require('cors');
 SECRET = "RESTAPI"
 
 
-
-
 app.use(cors())
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
