@@ -1,18 +1,18 @@
 /* ===================== INITALISE MODULES AND APP =======================*/
 const express = require('express');
 const mongoose = require('mongoose');
-// var cors = require('cors');
+var cors = require('cors');
 const jwt = require('jsonwebtoken');
 SECRET = "RESTAPI" 
 
 const app = express(); 
 
-// app.use(cors())
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
+app.use(cors())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 /* ==================== INITIALISE ROUTES =======================*/
 const loginRoutes = require("./routes/login")
