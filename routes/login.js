@@ -17,7 +17,7 @@ router.post("/login",oneOf([body("email"),body("phone")]), body("password"), asy
     try {
         const error = validationResult(req)
         if (!error.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: error.array() })
         }
         let user
         console.log(req.body)

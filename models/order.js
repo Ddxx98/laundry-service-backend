@@ -11,9 +11,9 @@ const productSchema = new Schema({
   })
   
 const orderSchema = new Schema({
-    user: {type: mongoose.Types.ObjectId ,ref:'User'},
     status: {type: String},
-    product: {type: [productSchema]}
+    products: {type: [productSchema]},
+    user: {type: mongoose.Types.ObjectId ,ref:'User'},
 })
 
 const Order = mongoose.model('Order',orderSchema)
