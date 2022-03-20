@@ -37,7 +37,7 @@ router.post("/login",oneOf([body("email"),body("phone")]), body("password"), asy
         bcrypt.compare(password,user.password).then(function(result){
             if (result){
                 var token = jwt.sign({
-                    exp: Math.floor(Date.now() / 1000) + (60*60),
+                    exp: "7d",
                     data: user._id
                 },SECRET)
                 
