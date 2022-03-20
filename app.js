@@ -20,8 +20,8 @@ const registerRoutes = require("./routes/register")
 const orderRoutes = require("./routes/orders")
 
 app.use("/api/v1",loginRoutes)
-app.use("/ap1/v1",registerRoutes)
-app.use("/api/v1/",orderRoutes)
+app.use("/api/v1",registerRoutes)
+app.use("/api/v1",orderRoutes)
 
 /* =================== MONGOOSE CONNECTION =======================*/
 mongoose.connect('mongodb+srv://meghna:11223344@cluster0.wpyvn.mongodb.net/laundryService?retryWrites=true&w=majority')
