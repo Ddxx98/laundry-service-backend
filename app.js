@@ -18,6 +18,7 @@ const app = express();
 const loginRoutes = require("./routes/login")
 const registerRoutes = require("./routes/register")
 const orderRoutes = require("./routes/orders")
+const userRoutes = require("./routes/user")
 
 /* =================== MONGOOSE CONNECTION =======================*/
 mongoose.connect('mongodb+srv://meghna:11223344@cluster0.wpyvn.mongodb.net/laundryService?retryWrites=true&w=majority')
@@ -49,6 +50,7 @@ app.use("/orders",(req,res,next)=>{
 app.use("/",loginRoutes)
 app.use("/",registerRoutes)
 app.use("/",orderRoutes)
+app.use("/",userRoutes)
 /*===================== START SERVER ==============================*/
 app.listen(PORT,()=>{  
     console.log(`example app listening on port ${PORT}`);
