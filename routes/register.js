@@ -10,4 +10,6 @@ const router = express.Router()
 
 router.use(bodyParser());
 
+/* =========================== REGISTER ===============================*/
+
 module.exports = router
