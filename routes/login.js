@@ -37,9 +37,8 @@ router.post("/login",oneOf([body("email"),body("phone")]), body("password"), asy
         bcrypt.compare(password,user.password).then(function(result){
             if (result){
                 var token = jwt.sign({
-                    exp: "7d",
                     data: user._id
-                },SECRET)
+                },SECRET,{ expiresIn: '7d'})
                 
                 return res.status(200).json({
                     status:"success",
