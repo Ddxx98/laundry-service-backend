@@ -13,6 +13,8 @@ const productSchema = new Schema({
 const orderSchema = new Schema({
     status: {type: String},
     products: {type: [productSchema]},
+    totalPrice : {type: Number, default:0},
+    totalQuantity : {type: Number, default:0},
     user: {type: mongoose.Types.ObjectId ,ref:'User'},
 })
 
