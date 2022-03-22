@@ -42,7 +42,8 @@ router.post("/login",oneOf([body("email"),body("phone")]), body("password"), asy
                 
                 return res.status(200).json({
                     status:"success",
-                    token
+                    Token:token,
+                    User:user
                 })
             }else{
                 return res.status(401).json({
